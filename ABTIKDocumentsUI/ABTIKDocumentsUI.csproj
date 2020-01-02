@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A1F72CC-7BC0-4BBE-BCBD-B445E9E027C1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ABTIKDocumentsUI</RootNamespace>
+    <AssemblyName>ABTIKDocumentsUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LDRRMO Documents.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ABTIKDocumentsUI.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\..\Desktop\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\EquipmentBLL.cs" />
+    <Compile Include="BLL\ExtricationKitBLL.cs" />
+    <Compile Include="BLL\FirstAidKitBLL.cs" />
+    <Compile Include="BLL\GenSetBLL.cs" />
+    <Compile Include="BLL\MotorizedVehicleBLL.cs" />
+    <Compile Include="BLL\OthersBLL.cs" />
+    <Compile Include="BLL\PCRBLL.cs" />
+    <Compile Include="BLL\PPEBLL.cs" />
+    <Compile Include="BLL\RespondersBLL.cs" />
+    <Compile Include="BLL\WaterRescueKitBLL.cs" />
+    <Compile Include="DAL\EquipmentDAL.cs" />
+    <Compile Include="DAL\ExtricationKitDAL.cs" />
+    <Compile Include="DAL\FirstAidKitDAL.cs" />
+    <Compile Include="DAL\GenSetDAL.cs" />
+    <Compile Include="DAL\OthersDAL.cs" />
+    <Compile Include="DAL\PPEDAL.cs" />
+    <Compile Include="DAL\VehicleDAL.cs" />
+    <Compile Include="DAL\PCRDAL.cs" />
+    <Compile Include="DAL\RespondersDAL.cs" />
+    <Compile Include="DAL\WaterRescueKitDAL.cs" />
+    <Compile Include="DataSet\dsPrintAllMV.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPrintAllMV.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsPrintAllPCR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPrintAllPCR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsPrintAllResponders.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPrintAllResponders.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCreateAccount.Designer.cs">
+      <DependentUpon>frmCreateAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPassword.Designer.cs">
+      <DependentUpon>frmPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPrintAllMV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPrintAllMV.Designer.cs">
+      <DependentUpon>frmPrintAllMV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPrintAllPCR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPrintAllPCR.Designer.cs">
+      <DependentUpon>frmPrintAllPCR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPrintAllResponders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPrintAllResponders.Designer.cs">
+      <DependentUpon>frmPrintAllResponders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPrintEachPCR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPrintEachPCR.Designer.cs">
+      <DependentUpon>frmPrintEachPCR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPrintEachResponder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPrintEachResponder.Designer.cs">
+      <DependentUpon>frmPrintEachResponder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\EquipmentCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\EquipmentCustomControl.Designer.cs">
+      <DependentUpon>EquipmentCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\UserBLL.cs" />
+    <Compile Include="UserControl\EvacuationCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\EvacuationCustomControl.Designer.cs">
+      <DependentUpon>EvacuationCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RespondersCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\RespondersCustomControl.Designer.cs">
+      <DependentUpon>RespondersCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\UserDAL.cs" />
+    <Compile Include="UserControl\KandinganCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\KandinganCustomControl.Designer.cs">
+      <DependentUpon>KandinganCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\KawasanCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\KawasanCustomControl.Designer.cs">
+      <DependentUpon>KawasanCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\OlangoCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\OlangoCustomControl.Designer.cs">
+      <DependentUpon>OlangoCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PCRCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\PCRCustomControl.Designer.cs">
+      <DependentUpon>PCRCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\EsperanzaCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\EsperanzaCustomControl.Designer.cs">
+      <DependentUpon>EsperanzaCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PunayCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\PunayCustomControl.Designer.cs">
+      <DependentUpon>PunayCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RosarioCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\RosarioCustomControl.Designer.cs">
+      <DependentUpon>RosarioCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SaksakCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\SaksakCustomControl.Designer.cs">
+      <DependentUpon>SaksakCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TampaanCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\TampaanCustomControl.Designer.cs">
+      <DependentUpon>TampaanCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TuyokonCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\TuyokonCustomControl.Designer.cs">
+      <DependentUpon>TuyokonCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmMainABTIKDocuments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmMainABTIKDocuments.Designer.cs">
+      <DependentUpon>frmMainABTIKDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\HomeCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\HomeCustomControl.Designer.cs">
+      <DependentUpon>HomeCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl\KantabogonCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\KantabogonCustomControl.Designer.cs">
+      <DependentUpon>KantabogonCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PoblacionCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\PoblacionCustomControl.Designer.cs">
+      <DependentUpon>PoblacionCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ZaragosaCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ZaragosaCustomControl.Designer.cs">
+      <DependentUpon>ZaragosaCustomControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Report\rptPrintAllMotorizedVehicle.rdlc" />
+    <EmbeddedResource Include="Report\rptPrintAllPCR.rdlc" />
+    <EmbeddedResource Include="Report\rptPrintAllResponders.rdlc" />
+    <EmbeddedResource Include="Report\rptPrintEachPCR.rdlc" />
+    <EmbeddedResource Include="Report\rptPrintEachResponder.rdlc" />
+    <EmbeddedResource Include="UI\frmCreateAccount.resx">
+      <DependentUpon>frmCreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPassword.resx">
+      <DependentUpon>frmPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPrintAllMV.resx">
+      <DependentUpon>frmPrintAllMV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPrintAllPCR.resx">
+      <DependentUpon>frmPrintAllPCR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPrintAllResponders.resx">
+      <DependentUpon>frmPrintAllResponders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPrintEachPCR.resx">
+      <DependentUpon>frmPrintEachPCR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPrintEachResponder.resx">
+      <DependentUpon>frmPrintEachResponder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\EquipmentCustomControl.resx">
+      <DependentUpon>EquipmentCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\EvacuationCustomControl.resx">
+      <DependentUpon>EvacuationCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\RespondersCustomControl.resx">
+      <DependentUpon>RespondersCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\KandinganCustomControl.resx">
+      <DependentUpon>KandinganCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\KawasanCustomControl.resx">
+      <DependentUpon>KawasanCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\OlangoCustomControl.resx">
+      <DependentUpon>OlangoCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\PCRCustomControl.resx">
+      <DependentUpon>PCRCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\EsperanzaCustomControl.resx">
+      <DependentUpon>EsperanzaCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\PunayCustomControl.resx">
+      <DependentUpon>PunayCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\RosarioCustomControl.resx">
+      <DependentUpon>RosarioCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\SaksakCustomControl.resx">
+      <DependentUpon>SaksakCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TampaanCustomControl.resx">
+      <DependentUpon>TampaanCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TuyokonCustomControl.resx">
+      <DependentUpon>TuyokonCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmMainABTIKDocuments.resx">
+      <DependentUpon>frmMainABTIKDocuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\HomeCustomControl.resx">
+      <DependentUpon>HomeCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControl\KantabogonCustomControl.resx">
+      <DependentUpon>KantabogonCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\PoblacionCustomControl.resx">
+      <DependentUpon>PoblacionCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ZaragosaCustomControl.resx">
+      <DependentUpon>ZaragosaCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet\dsPrintAllMV.xsc">
+      <DependentUpon>dsPrintAllMV.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsPrintAllMV.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPrintAllMV.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsPrintAllMV.xss">
+      <DependentUpon>dsPrintAllMV.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsPrintAllPCR.xsc">
+      <DependentUpon>dsPrintAllPCR.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsPrintAllPCR.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPrintAllPCR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsPrintAllPCR.xss">
+      <DependentUpon>dsPrintAllPCR.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsPrintAllResponders.xsc">
+      <DependentUpon>dsPrintAllResponders.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsPrintAllResponders.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPrintAllResponders.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsPrintAllResponders.xss">
+      <DependentUpon>dsPrintAllResponders.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LDRRMO Documents.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Responders\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
